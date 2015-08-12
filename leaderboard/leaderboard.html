@@ -8,11 +8,7 @@
   <div class="outer">
     <div class="logo"></div>
     <h1 class="title">Tweet Tweet</h1>
-    <div class="subtitle">({{completeCount}}) done &amp; ({{incompleteCount}}) left</div>
-    <label class="hide-completed">
-        <input type="checkbox" checked="{{hideCompleted}}" />
-        Hide Completed Tasks
-    </label>
+
 
     {{> leaderboard}}
   </div>
@@ -20,6 +16,12 @@
 
 
 <template name="leaderboard">
+    <div class="subtitle">({{completeCount}}) done &amp; ({{incompleteCount}}) left</div>
+    <label class="hide-completed">
+        <input type="checkbox" checked="{{hideCompleted}}" />
+        Hide Completed Tasks
+    </label>
+    
   <ol class="leaderboard">
     {{#each players}}
       {{> player}}
@@ -41,7 +43,7 @@
 <template name="player">
   <li class="player {{selected}}">
     <span class="name">{{name}}</span>
-    <span class="score">{{score}}</span> 
+    <!--<span class="score">{{score}}</span>-->
     <span class="score">{{type}}</span>
   </li>
 </template>

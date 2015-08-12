@@ -142,6 +142,30 @@ body {
 .inc:active {
   box-shadow: rgba(0,0,0,.3) 0 1px 3px 0 inset;
 }
+.details .person {
+  border-radius: 3em;
+  border: #eb5f3a 1px solid;
+  background: transparent;
+  color: #eb5f3a;
+  cursor: pointer;
+  float: right;
+  font-family: 'Source Sans Pro' ,'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 10px 30px;
+  transition: all 200ms ease-in;
+}
+
+.person:hover {
+  background: #eb5f3a;
+  color: #fff;
+}
+
+.person:active {
+  box-shadow: rgba(0,0,0,.3) 0 1px 3px 0 inset;
+}
 
 .message {
   color: #aaa;
@@ -149,6 +173,55 @@ body {
   text-align: center;
 }
 
+.details .org {
+  border-radius: 3em;
+  border: #eb5f3a 1px solid;
+  background: transparent;
+  color: #eb5f3a;
+  cursor: pointer;
+  float: right;
+  font-family: 'Source Sans Pro' ,'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 10px 30px;
+  transition: all 200ms ease-in;
+}
+
+.org:hover {
+  background: #eb5f3a;
+  color: #fff;
+}
+
+.org:active {
+  box-shadow: rgba(0,0,0,.3) 0 1px 3px 0 inset;
+}
+
+.details .unsure {
+  border-radius: 3em;
+  border: #eb5f3a 1px solid;
+  background: transparent;
+  color: #eb5f3a;
+  cursor: pointer;
+  float: right;
+  font-family: 'Source Sans Pro' ,'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 10px 30px;
+  transition: all 200ms ease-in;
+}
+
+.unsure:hover {
+  background: #eb5f3a;
+  color: #fff;
+}
+
+.unsure:active {
+  box-shadow: rgba(0,0,0,.3) 0 1px 3px 0 inset;
+}
 @media (max-width: 500px) {
   .details, .message {
     display: block;

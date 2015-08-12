@@ -3,7 +3,7 @@
 
 Players = new Mongo.Collection("players");
 
-if (Meteor.isClient) {
+if (Meteor.isClient) { 
   Template.leaderboard.helpers({
     players: function () {
       if (Session.get("hideCompleted")) {
@@ -12,14 +12,13 @@ if (Meteor.isClient) {
         } 
       else {
         // Otherwise, return all of the tasks
-        return Players.find({}, { sort: { score: -1, name: 1 } });
+        return Players.find({});
       }
     },
     hideCompleted: function () {
       return Session.get("hideCompleted");
     },
     incompleteCount: function () {
-
         return Players.find({ type: { $exists: false }}).count();
     },
     completeCount: function (){
