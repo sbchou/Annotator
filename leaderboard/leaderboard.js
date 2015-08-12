@@ -8,7 +8,7 @@ if (Meteor.isClient) {
     players: function () {
       if (Session.get("hideCompleted")) {
         // If hide completed is checked, filter tasks 
-        return Players.find({ $and: [ { age: { $exists: false } }, { gender: { $exists: false }} ]});
+        return Players.find({ type: { $exists: false }});
         } 
       else {
         // Otherwise, return all of the tasks
@@ -20,7 +20,10 @@ if (Meteor.isClient) {
     },
     incompleteCount: function () {
 
-        return Players.find({ $and: [ { age: { $exists: true } }, { gender: { $exists: true }} ]}).count();
+        return Players.find({ type: { $exists: false }}).count();
+    },
+    completeCount: function (){
+        return Players.find({type: {$exists: true}}).count();
     },
     selectedName: function () {
       var player = Players.findOne(Session.get("selectedPlayer"));
@@ -28,7 +31,6 @@ if (Meteor.isClient) {
     }
 
   });
-
 
 
   Template.leaderboard.events({
@@ -41,16 +43,16 @@ if (Meteor.isClient) {
       Players.update(Session.get("selectedPlayer"), {$inc: {score: 5}});
     },
 
-    'click .female': function () {
-      Players.update(Session.get("selectedPlayer"), {gender: 1});
+    'click .person': function () {
+      Players.update(Session.get("selectedPlayer"), {$set: {type: "person"}});
     },
 
-    'click .male': function () {
-      Players.update(Session.get("selectedPlayer"), {gender: -1});
+    'click .org': function () {
+      Players.update(Session.get("selectedPlayer"), {$set: {type: "org"}});
     },
 
     'click .unsure': function () {
-      Players.update(Session.get("selectedPlayer"), {gender: 0});
+      Players.update(Session.get("selectedPlayer"), {$set: {type: "unsure"}});
     }
   });
 
@@ -76,8 +78,7 @@ if (Meteor.isServer) {
       _.each(names, function (name) {
         Players.insert({
           name: name,
-          score: Math.floor(Random.fraction() * 10) * 5,
-          age: 0
+          score: Math.floor(Random.fraction() * 10) * 5
         });
       });
     }

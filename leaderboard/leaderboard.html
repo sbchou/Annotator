@@ -8,7 +8,7 @@
   <div class="outer">
     <div class="logo"></div>
     <h1 class="title">Tweet Tweet</h1>
-    <div class="subtitle">({{incompleteCount}})</div>
+    <div class="subtitle">({{completeCount}}) done &amp; ({{incompleteCount}}) left</div>
     <label class="hide-completed">
         <input type="checkbox" checked="{{hideCompleted}}" />
         Hide Completed Tasks
@@ -29,9 +29,9 @@
   {{#if selectedName}}
     <div class="details">
       <div class="name">{{selectedName}}</div> 
-      <button class="inc">?</button>
-      <button class="inc">Org</button>
-      <button class="inc">Person</button>
+      <button class="unsure">?</button>
+      <button class="org">Org</button>
+      <button class="person">Person</button>
     </div>
   {{else}}
     <div class="message">Click a player to select</div>
@@ -41,9 +41,8 @@
 <template name="player">
   <li class="player {{selected}}">
     <span class="name">{{name}}</span>
-    <span class="score">{{score}}</span>
-    <span class="score">{{age}} years</span>
-    <span class="score">{{gender}}</span>
+    <span class="score">{{score}}</span> 
+    <span class="score">{{type}}</span>
   </li>
 </template>
 
