@@ -6,15 +6,37 @@ Players = new Mongo.Collection("players");
 if (Meteor.isClient) {
   Template.leaderboard.helpers({
     players: function () {
-      return Players.find({}, { sort: { score: -1, name: 1 } });
+      if (Session.get("hideCompleted")) {
+        // If hide completed is checked, filter tasks 
+        return Players.find({ $and: [ { age: { $exists: false } }, { gender: { $exists: false }} ]});
+        } 
+      else {
+        // Otherwise, return all of the tasks
+        return Players.find({}, { sort: { score: -1, name: 1 } });
+      }
+    },
+    hideCompleted: function () {
+      return Session.get("hideCompleted");
+    },
+    incompleteCount: function () {
+
+        return Players.find({ $and: [ { age: { $exists: true } }, { gender: { $exists: true }} ]}).count();
     },
     selectedName: function () {
       var player = Players.findOne(Session.get("selectedPlayer"));
       return player && player.name;
     }
+
   });
 
+
+
   Template.leaderboard.events({
+
+    "change .hide-completed input": function (event) {
+      Session.set("hideCompleted", event.target.checked);
+    },
+
     'click .inc': function () {
       Players.update(Session.get("selectedPlayer"), {$inc: {score: 5}});
     },
