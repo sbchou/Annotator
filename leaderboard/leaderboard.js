@@ -38,10 +38,6 @@ if (Meteor.isClient) {
       Session.set("hideCompleted", event.target.checked);
     },
 
-    'click .inc': function () {
-      Players.update(Session.get("selectedPlayer"), {$inc: {score: 5}});
-    },
-
     'click .person': function () {
       Players.update(Session.get("selectedPlayer"), {$set: {type: "person"}});
     },
@@ -72,12 +68,11 @@ if (Meteor.isClient) {
 if (Meteor.isServer) {
   Meteor.startup(function () {
     if (Players.find().count() === 0) {
-      var names = ["user 1", "user 2", "user 3",
-                   "user 4", "user 5", "user 6"];
+      var names = ["@mpetichou", "@socialmachines", "@MIT",
+                   "@nytimes", "@TheAtlantic", "@TheOnion"];
       _.each(names, function (name) {
         Players.insert({
-          name: name,
-          score: Math.floor(Random.fraction() * 10) * 5
+          name: name
         });
       });
     }
