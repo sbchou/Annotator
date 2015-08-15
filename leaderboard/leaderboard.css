@@ -98,7 +98,7 @@ body {
 
 .player.selected {
   background-color: #fefff4;
-  border-left: #eb5f3a 4px solid;
+  border-left: #4099FF 4px solid;
 }
 
 .player:hover {
@@ -120,9 +120,9 @@ body {
 
 .details .inc {
   border-radius: 3em;
-  border: #eb5f3a 1px solid;
+  border: #4099FF 1px solid;
   background: transparent;
-  color: #eb5f3a;
+  color: #4099FF;
   cursor: pointer;
   float: right;
   font-family: 'Source Sans Pro' ,'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -135,7 +135,7 @@ body {
 }
 
 .inc:hover {
-  background: #eb5f3a;
+  background: #4099FF;
   color: #fff;
 }
 
@@ -144,9 +144,9 @@ body {
 }
 .details .person {
   border-radius: 3em;
-  border: #eb5f3a 1px solid;
+  border: #4099FF 1px solid;
   background: transparent;
-  color: #eb5f3a;
+  color: #4099FF;
   cursor: pointer;
   float: right;
   font-family: 'Source Sans Pro' ,'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -159,7 +159,7 @@ body {
 }
 
 .person:hover {
-  background: #eb5f3a;
+  background: #4099FF;
   color: #fff;
 }
 
@@ -175,9 +175,9 @@ body {
 
 .details .org {
   border-radius: 3em;
-  border: #eb5f3a 1px solid;
+  border: #4099FF 1px solid;
   background: transparent;
-  color: #eb5f3a;
+  color: #4099FF;
   cursor: pointer;
   float: right;
   font-family: 'Source Sans Pro' ,'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -190,7 +190,7 @@ body {
 }
 
 .org:hover {
-  background: #eb5f3a;
+  background: #4099FF;
   color: #fff;
 }
 
@@ -200,9 +200,9 @@ body {
 
 .details .unsure {
   border-radius: 3em;
-  border: #eb5f3a 1px solid;
+  border: #4099FF 1px solid;
   background: transparent;
-  color: #eb5f3a;
+  color: #4099FF;
   cursor: pointer;
   float: right;
   font-family: 'Source Sans Pro' ,'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -215,7 +215,7 @@ body {
 }
 
 .unsure:hover {
-  background: #eb5f3a;
+  background: #4099FF;
   color: #fff;
 }
 
