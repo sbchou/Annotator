@@ -68,8 +68,8 @@ if (Meteor.isClient) {
 if (Meteor.isServer) {
   Meteor.startup(function () {
     if (Players.find().count() === 0) {
-      var names = ["@mpetitchou", "@socialmachines", "@MIT",
-                   "@nytimes", "@TheAtlantic", "@TheOnion"];
+      var names = ["mpetitchou", "socialmachines", "MIT",
+                   "nytimes", "TheAtlantic", "TheOnion"];
       _.each(names, function (name) {
         Players.insert({
           name: name
