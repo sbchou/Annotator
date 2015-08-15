@@ -58,7 +58,7 @@ if (Meteor.isClient) {
   });
 
   Template.player.events({
-    'click': function () {
+    'click': function () {  
       Session.set("selectedPlayer", this._id);
     }
   });
