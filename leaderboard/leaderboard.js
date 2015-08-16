@@ -40,25 +40,29 @@ if (Meteor.isClient) {
 
     'click .person': function () {
       Players.update(Session.get("selectedPlayer"), {$set: {type: "person"}});
+      location.reload();
     },
 
     'click .org': function () {
       Players.update(Session.get("selectedPlayer"), {$set: {type: "org"}});
+      location.reload();
     },
 
     'click .unsure': function () {
       Players.update(Session.get("selectedPlayer"), {$set: {type: "unsure"}});
+      location.reload();
     }
   });
 
   Template.player.helpers({
     selected: function () {
       return Session.equals("selectedPlayer", this._id) ? "selected" : '';
+      location.reload();
     }
   });
 
   Template.player.events({
-    'click': function () {  
+    'click': function () { 
       Session.set("selectedPlayer", this._id);
     }
   });
