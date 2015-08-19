@@ -8,10 +8,10 @@ if (Meteor.isClient) {
     players: function () {
        if (Session.get("showCompleted")) {
         // If hide completed is checked, filter tasks 
-        return Players.find({});
+        return Players.find({type: { $exists: true }});
         } 
        else {
-        return Players.find({ type: { $exists: false }});
+        return [ Players.findOne({ type: { $exists: false }}) ];
         // Otherwise, return all of the tasks
         //return Players.find({});
       }
