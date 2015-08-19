@@ -11,7 +11,9 @@ if (Meteor.isClient) {
         return Players.find({type: { $exists: true }});
         } 
        else {
-        return [ Players.findOne({ type: { $exists: false }}) ];
+        p = Players.findOne({type: {$exists:false}});
+        Session.set("selectedPlayer", p._id);
+        return [ p ];
         // Otherwise, return all of the tasks
         //return Players.find({});
       }
@@ -58,15 +60,17 @@ if (Meteor.isClient) {
   Template.player.helpers({
     selected: function () {
       return Session.equals("selectedPlayer", this._id) ? "selected" : '';
-      location.reload();
+      l 
     }
   });
 
+  /*
   Template.player.events({
     'click': function () { 
       Session.set("selectedPlayer", this._id);
     }
   });
+*/
 }
 
 // On server startup, create some players if the database is empty.
