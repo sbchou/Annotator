@@ -1,0 +1,15 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "jquery-csv": {}
+    },
+    "packages": {
+      "jquery-csv": {
+        "git": "https://github.com/donskifarrell/meteor-jquery-csv.git",
+        "tag": "v0.7.1",
+        "commit": "7a7d868dd85da5d64dc4a174a3e5d5e2bbf90c03"
+      }
+    }
+  }
+}
