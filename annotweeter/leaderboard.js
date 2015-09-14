@@ -29,6 +29,7 @@ if (Meteor.isClient) {
     },
     selectedName: function () {
       var player = Players.findOne(Session.get("selectedPlayer"));
+ 
       return player && player.name;
     }
 
@@ -60,7 +61,6 @@ if (Meteor.isClient) {
   Template.player.helpers({
     selected: function () {
       return Session.equals("selectedPlayer", this._id) ? "selected" : '';
-      l 
     }
   });
 
@@ -74,7 +74,7 @@ if (Meteor.isClient) {
             var text = e.target.result;
             console.log(text)
             var all = $.csv.toObjects(text);
-            console.log(all)
+            //console.log(all)
             _.each(all, function (entry) {
               Players.insert(entry);
             });
@@ -96,8 +96,9 @@ if (Meteor.isClient) {
 
 // On server startup, create some players if the database is empty.
 if (Meteor.isServer) {
-  Meteor.startup(function () {
-    if (Players.find().count() === 0) {
+  Meteor.startup(function () { 
+
+    /*if (Players.find().count() === 0) {
       var names = ["mpetitchou", "socialmachines", "MIT",
                    "nytimes", "TheAtlantic", "TheOnion"];
       _.each(names, function (name) {
@@ -105,6 +106,6 @@ if (Meteor.isServer) {
           name: name
         });
       });
-    }
+    }*/
   });
 }

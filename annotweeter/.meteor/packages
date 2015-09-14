@@ -8,4 +8,11 @@ autopublish
 insecure
 meteor-platform
 
+#jquery-csv
+meteorhacks:npm
+
+
+npm-container
+jquery
+npm
 jquery-csv
