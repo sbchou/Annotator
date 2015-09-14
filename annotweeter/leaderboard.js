@@ -99,7 +99,9 @@ if (Meteor.isClient) {
 
 // On server startup, create some players if the database is empty.
 if (Meteor.isServer) {
-
+    if (Players.find().count() === 0){
+      Session.set("noEntries", true);
+    }
 
     /*if (Players.find().count() === 0) {
       var names = ["mpetitchou", "socialmachines", "MIT",

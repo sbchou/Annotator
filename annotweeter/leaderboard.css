@@ -84,21 +84,29 @@ body {
   font-size: 1.25em;
   font-weight: 300;
   vertical-align: middle;
-}
+} 
 
-.player .score {
-  color: #333;
-  display: block;
-  float: right;
+.player .description { 
+  display: inline-block;
   font-size: 1.25em;
-  font-weight: 600;
-  line-height: 2.4em;
-  padding-right: 1.25em;
-}
+  font-weight: 300;
+  vertical-align: middle;
+  padding: 10px;
+} 
+
+.player .img { 
+  display: inline-block;
+  font-size: 1.25em;
+  font-weight: 300;
+  vertical-align: middle;
+  padding: 30px;
+} 
+
 
 .player.selected {
   background-color: #fefff4;
-  border-left: #4099FF 4px solid;
+  border-left: #4099FF 4px solid; 
+  /*float: left;*/
 }
 
 .player:hover {

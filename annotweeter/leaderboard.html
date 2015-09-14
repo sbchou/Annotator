@@ -32,17 +32,19 @@
 
 <!-- CSV uploader -->
 <template name="upload">
-  No entries? Upload a CSV file! 
-  <input type="file" id="files" name="files[]" multiple />
-  <output id="list"></output>
+  {{#if noEntries}}
+    No entries? Upload a CSV file! 
+    <input type="file" id="files" name="files[]" multiple />
+    <output id="list"></output>
+  {{/if}}
 </template>
 
 <template name="leaderboard">
     <div class="subtitle">({{completeCount}}) done &amp; ({{incompleteCount}}) left</div>
-    <label class="show-completed">
+    <!--<label class="show-completed">
         <input type="checkbox" checked="{{showCompleted}}" />
         Show Annotated Tweets
-    </label>
+    </label>-->
     
   <ol class="leaderboard">
    {{#each players}} 
@@ -90,9 +92,10 @@
 <template name="player">
   <li class="player {{selected}}">
     <span class="name">@{{name}}</span>
+    <span class="description">{{description}}</span>
     <!--<span class="score">{{score}}</span>-->
     <span class="score">{{type}}</span>
-    <img src={{picture}}> 
+    <span class="img"><img src={{picture}}></span>
 
   </li>
 </template>
