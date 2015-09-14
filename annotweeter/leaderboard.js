@@ -13,6 +13,9 @@ if (Meteor.isClient) {
        else {
         p = Players.findOne({type: {$exists:false}});
         Session.set("selectedPlayer", p._id);
+        var url = p.picture;
+        url = url.replace("_normal", "");
+        p.picture = url;
         return [ p ];
         // Otherwise, return all of the tasks
         //return Players.find({});
@@ -96,7 +99,7 @@ if (Meteor.isClient) {
 
 // On server startup, create some players if the database is empty.
 if (Meteor.isServer) {
-  Meteor.startup(function () { 
+
 
     /*if (Players.find().count() === 0) {
       var names = ["mpetitchou", "socialmachines", "MIT",
@@ -107,5 +110,5 @@ if (Meteor.isServer) {
         });
       });
     }*/
-  });
+  //});
 }
