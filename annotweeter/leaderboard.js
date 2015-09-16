@@ -87,30 +87,24 @@ if (Meteor.isClient) {
       }
     }
   });
-  /*
-  Template.player.events({
-    'click': function () { 
-      Session.set("selectedPlayer", this._id);
-    }
-  });
-*/
-}
+
+  Template.upload.helpers({
+    noEntries: function () {
+       if (Players.find().count() === 0) {
+        // If hide completed is checked, filter tasks 
+          return true;
+        }  
+       else{
+        return false;
+       }
+      }
+    });
+ }
 
 
 // On server startup, create some players if the database is empty.
 if (Meteor.isServer) {
-    if (Players.find().count() === 0){
-      Session.set("noEntries", true);
-    }
-
-    /*if (Players.find().count() === 0) {
-      var names = ["mpetitchou", "socialmachines", "MIT",
-                   "nytimes", "TheAtlantic", "TheOnion"];
-      _.each(names, function (name) {
-        Players.insert({
-          name: name
-        });
-      });
-    }*/
-  //});
+    //if (Players.find().count() === 0){
+    //  Session.set("noEntries", true);
+    //} 
 }

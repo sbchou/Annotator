@@ -23,7 +23,7 @@
 <body>
   <div class="outer">
     <div class="logo"></div>
-    <h1 class="title">Tweet Tweet</h1>
+    <h1 class="title">ANNOTWEETER</h1>
 
     {{> upload}}
     {{> leaderboard}}
@@ -31,11 +31,11 @@
 </body>
 
 <!-- CSV uploader -->
-<template name="upload">
+<template name="upload"> 
   {{#if noEntries}}
-    No entries? Upload a CSV file! 
+     No entries? Upload a CSV file! 
     <input type="file" id="files" name="files[]" multiple />
-    <output id="list"></output>
+    <output id="list"></output> 
   {{/if}}
 </template>
 
