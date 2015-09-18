@@ -90,7 +90,7 @@ if (Meteor.isClient) {
 
   Template.upload.helpers({
     noEntries: function () {
-       if (Players.find().count() === 0) {
+       if ((Players.find().count() === 0) || (Players.find({type: {$exists: false}}).count() === 0)) {
         // If hide completed is checked, filter tasks 
           return true;
         }  
