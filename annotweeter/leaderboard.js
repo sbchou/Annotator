@@ -30,6 +30,14 @@ if (Meteor.isClient) {
     completeCount: function (){
         return Players.find({type: {$exists: true}}).count();
     },
+    totalCount: function(){
+        return Players.find({}).count();
+    },
+    percentage: function(){
+      var completed = Players.find({type: {$exists: true}}).count();
+      var total = Players.find({}).count();
+      return Math.round(( completed / total ) * 100);
+    },
     selectedName: function () {
       var player = Players.findOne(Session.get("selectedPlayer"));
  
