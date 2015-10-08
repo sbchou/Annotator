@@ -1,5 +1,5 @@
 <head>
-  <title>Leaderboard</title>
+  <title>Sorting Hat</title>
   <meta name="viewport" content="width=device-width, user-scalable=no">
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
   <script>window.twttr = (function(d, s, id) {
@@ -23,7 +23,7 @@
 <body>
   <div class="outer">
     <div class="logo"></div>
-    <h1 class="title">ANNOTWEETER</h1>
+    <h1 class="title">SORTING HAT</h1>
 
     {{> upload}}
     {{> leaderboard}}
@@ -53,17 +53,17 @@
         Show Annotated Tweets
     </label>-->
     
-  <ol class="leaderboard">
+  <ul class="leaderboard">
    {{#each players}} 
       {{> player}}
    {{/each}} 
-  </ol>
+  </ul>
  {{#if selectedName}}
-    <div class="details">
-      <div class="name">{{selectedName}}</div> 
-      <button class="unsure">?</button>
+    <div class="details"> 
+      <!--<div class="name">{{selectedName}}</div> --> 
       <button class="org">Org</button>
       <button class="person">Person</button>
+      <button class="unsure">?</button>
       <div id ='timeline'></div>
       <!--<a class="twitter-timeline" href="https://twitter.com/mpetitchou" data-widget-id="631684275625029632" data-screen-name={{selectedName}}>Tweets by @mpetitchou</a>-->
 
@@ -96,13 +96,15 @@
 </template>
 
 <template name="player">
-  <li class="player {{selected}}">
+  <ul class="player {{selected}}">
+    <!--<div class="name">{{selectedName}}</div>-->
+     
     <span class="name">@{{name}}</span>
     <span class="description">{{description}}</span>
     <!--<span class="score">{{score}}</span>-->
     <span class="score">{{type}}</span>
     <span class="img"><img src={{picture}}></span>
 
-  </li>
+  </ul>
 </template>
 

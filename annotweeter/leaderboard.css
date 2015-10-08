@@ -155,15 +155,15 @@ body {
   border: #4099FF 1px solid;
   background: transparent;
   color: #4099FF;
-  cursor: pointer;
-  float: right;
+  cursor: pointer; 
   font-family: 'Source Sans Pro' ,'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 1rem;
+  font-size: 1.5rem;
   line-height: 1;
-  margin: 0;
+  margin: 1.5px;
   outline: none;
   padding: 10px 30px;
   transition: all 200ms ease-in;
+
 }
 
 .person:hover {
@@ -187,11 +187,10 @@ body {
   background: transparent;
   color: #4099FF;
   cursor: pointer;
-  float: right;
   font-family: 'Source Sans Pro' ,'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 1rem;
+  font-size: 1.5rem;
   line-height: 1;
-  margin: 0;
+  margin: 1.5px;
   outline: none;
   padding: 10px 30px;
   transition: all 200ms ease-in;
@@ -211,12 +210,11 @@ body {
   border: #4099FF 1px solid;
   background: transparent;
   color: #4099FF;
-  cursor: pointer;
-  float: right;
+  cursor: pointer; 
   font-family: 'Source Sans Pro' ,'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 1rem;
+  font-size: 1.5rem;
   line-height: 1;
-  margin: 0;
+  margin: 1.5px;
   outline: none;
   padding: 10px 30px;
   transition: all 200ms ease-in;
